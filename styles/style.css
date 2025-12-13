@@ -1425,20 +1425,6 @@ html, body {
     gap: 10px;
   }
 
-  /* мобильный хедер → в одну линию */
-  .header {
-    top: 20px;
-    left: 0px;
-    width: 92%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 12px;
-    gap: 10px;
-  }
-
   /* логотип */
   .logo {
     position: relative;
@@ -1488,9 +1474,15 @@ html, body {
   .hero {
     position: relative;
     width: 100%;
-    min-height: 130vh; /* ✔ только первый экран */
     background: #D7E0EB;
-    overflow: hidden
+    overflow: hidden;
+  }
+
+  .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 3vh; /* вертикальные отступы между блоками */
+      padding: 5vw 5.55vw 8vh;
   }
 
   .hero-bg {
@@ -1513,10 +1505,10 @@ html, body {
 
 /* мобильный логотипный блок */
     .logo-frame {
-      position: absolute;
+      position: relative;
 
-      left: 1.93vw;
-      top: 11.18vh;
+      margin-left: -5vw;
+      margin-top: -10vh;
 
       width: 61.46vw;
       height: 5.84vh;
@@ -1549,19 +1541,15 @@ html, body {
 
 /* мобильная версия блока поддержки */
   .support-block {
-    position: absolute;
-    left: 68.07vw;
-    top: 21.33vh;
+    position: relative;
+    margin-left: 0vw;
+    margin-top: 0vh;
     width: 25.62vw;
     height: 4.42vh;
 
     background: rgba(250, 250, 238, 0.10);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
-
-    border-radius: 12px;
-    padding-left: 8px;
-    gap: 6px;
 
     border: 1px solid rgba(255, 255, 255, 0.3);
 
@@ -1591,15 +1579,13 @@ html, body {
 
 /* Мобильная версия блока плашки */
     .promo-card {
-      position: absolute;
+      position: relative;
 
       /* Координаты - такие же, как принцип у поддержки */
-      left: 68.07vw;
-      top: 30vh;      /* НЕ отрицательный, стабильный */
-
+      margin-left: 0vw;
+      margin-top: 0vh;      /* НЕ отрицательный, стабильный */
       width: 27vw;
       height: auto;    /* само увеличится по содержимому */
-
       padding: 10px;
       border-radius: 16px;
 
@@ -1633,9 +1619,9 @@ html, body {
     }
 
   .main-title {
-    position: absolute;
-    left: 5.33vw;
-    top: 71.8vh;
+    position: relative;
+    margin-left: -5vw;
+    margin-top: 0vh;
     width: 85.33vw;
 
     font-size: 6.66vw;
@@ -1648,9 +1634,9 @@ html, body {
   }
 
   .main-subtitle {
-    position: absolute;
-    left: 5.33vw;
-    top: 93.8vh;
+    position: relative;
+    margin-left: -5vw;
+    margin-top: -40vh;
     width: 79.73vw;
 
     font-size: 4.86vw;
@@ -1662,9 +1648,9 @@ html, body {
 
     /* Мобильная версия большой кнопки */
     .cta-button {
-      position: absolute;
-      left: 4.93vw;     /* было 41px */
-      top: 110.75vh;     /* было 692px */
+      position: relative;
+      margin-left: -2vw;
+      margin-top: -10vh;
 
       width: 85.33%;
       height: 6.49vh;
@@ -1697,23 +1683,26 @@ html, body {
       max-width: 230px;
     }
 
-    /* Мобильная версия блока "о компании" */
+
+    /* ================= ABOUT ================= */
     .about {
-      position: absolute;
-      left: 5.55vw;      /* 20px по Figma */
-      top: 123.92vh;
-      width: 88.9vw;
-      height: auto;
-      z-index: 2;
+      position: relative;        /* НЕ absolute */
+      width: 100%;
+      background: #D7E0EB;       /* если по макету */
+      padding: 8vh 5.55vw 4vh;          /* расстояние от hero */
+      overflow: hidden;
+    }
+
+    .about-inner {
+      position: relative;
+      width: 88.9vw;             /* как было */
+      margin: 0 auto;            /* центрируем */
     }
 
     /* Заголовок */
     .about-title {
-      position: absolute;
-      left: 0;
-      top: 0;
-
       width: 100%;
+      margin-bottom: 4vh;
       font-size: 8vw;
       line-height: 9.5vw;
       text-align: center;
@@ -1721,50 +1710,43 @@ html, body {
 
     /* Подзаголовок */
     .about-subtitle {
-      position: absolute;
-      left: 0;
-      top: 8vh;            /* расстояние по макету (примерно 106px) */
-      width: 100%;
-
+      margin-bottom: 6vh;
       font-size: 4.7vw;
       line-height: 6.3vw;
       text-align: left;
     }
+
 
     /* Основной текст */
     .about-text {
-      position: absolute;
-      left: 0;
-      top: 22vh;           /* 193px по макету, переведено в vh */
-      width: 100%;
-
+      margin-bottom: 8vh;
       font-size: 4.7vw;
       line-height: 6.3vw;
       text-align: left;
     }
 
-    /* Мобильная версия picture2 */
-    .picture2 {
-        position: absolute;
 
-        width: 143.33vw;      /* 350px из макета */
-        height: 82.48vh;     /* тоже 350px, но в vh */
+    /* Картинка — декоративная */
+    .about-image {
+      position: relative;
+      width: 143.33vw;
+      height: 82.48vh;
+      left: -10vw;
+      top: 0;
+      opacity: 0.6;
+      transform: rotate(36.46deg);
+      pointer-events: none;
 
-        left: -10vw;         /* -90px → vw */
-        top: 109.5vh;        /* 730px → vh */
-
-        background: none;
-        opacity: 0.6;
-        transform: rotate(36.46deg);
-        pointer-events: none;
     }
 
-    .picture2-bg {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: top center;
+    .about-image-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      z-index: 1;
     }
+
 
 /* наши услуги — мобильная версия */
   .services-title {
