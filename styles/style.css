@@ -1408,31 +1408,22 @@ html, body {
 /* мобильная версия */
 @media (max-width: 480px) {
 
-  .hero {
-    background: #D7E0EB;
-    width: 100%;
-    min-height: 745vh;
+  /* ================= HEADER ================= */
+  .header-class {
     position: relative;
+    width: 100%;
+    z-index: 10;
+    background: #D7E0EB;
+    overflow: hidden
   }
 
-    .main {
-      position: absolute;
-      width: 191vw;
-      height: 85vh;
-      left: 4.5vw;
-      top: 0vh;
-      transform: translateX(-50%);
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    /* картинка внутри блока */
-    .main-bg {
-      width: 100%;             /* занимает весь блок */
-      height: 100%;
-      object-fit: cover;       /* масштабируем без искажения */
-      object-position: top center;
-    }
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 12px 0;
+    gap: 10px;
+  }
 
   /* мобильный хедер → в одну линию */
   .header {
@@ -1491,6 +1482,33 @@ html, body {
 
   .header-mobile .burger {
     background: url('../img/main/burger_mobil.png') no-repeat center center;
+  }
+
+  /* ================= HERO ================= */
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 130vh; /* ✔ только первый экран */
+    background: #D7E0EB;
+    overflow: hidden
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 191vw;
+    height: 85vh;
+    transform: translateX(-50%);
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .main-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
   }
 
 /* мобильный логотипный блок */

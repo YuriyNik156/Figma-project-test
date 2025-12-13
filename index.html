@@ -1,6 +1,6 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,46 +9,51 @@
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
+<header class="header-class">
+    <div class="header-inner">
+
+      <!-- Логотип HEADER -->
+      <div class="logo">
+        <div class="logo-title">BBK IT</div>
+        <div class="logo-subtitle">Better Business Kontrol IT</div>
+      </div>
+
+        <!-- Десктопное меню HEADER -->
+      <div class="header-rectangle-3">
+        <nav class="header-menu">
+          <div class="header-item">Главная</div>
+          <div class="header-item">О компании</div>
+          <div class="header-item">Наши услуги</div>
+          <div class="header-item">Преимущества</div>
+          <div class="header-btn">Этапы работы</div>
+          <div class="header-item">Партнеры</div>
+          <div class="header-item">Контакты</div>
+        </nav>
+      </div>
+
+
+      <!-- Хедер. Мобильное меню -->
+      <div class="header-mobile">
+        <div class="icon telegram"></div>
+        <div class="icon whatsapp"></div>
+        <div class="icon burger"></div>
+      </div>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO / MAIN SCREEN ================= -->
 <section class="hero">
 
-  <!-- Картинка -->
-  <div class="main">
-    <img class="main-bg" src="img/main/main.png" alt="">
-  </div>
+    <!-- Фон / картинка -->
+    <div class="hero-bg">
+        <img class="main-bg" src="img/main/main.png" alt="">
+    </div>
 
-
-  <header class="header">
-  <!-- Логотип -->
-  <div class="logo">
-    <div class="logo-title">BBK IT</div>
-    <div class="logo-subtitle">Better Business Kontrol IT</div>
-  </div>
-
-    <!-- Хедер -->
-  <div class="header-rectangle-3">
-    <nav class="header-menu">
-      <div class="header-item">Главная</div>
-      <div class="header-item">О компании</div>
-      <div class="header-item">Наши услуги</div>
-      <div class="header-item">Преимущества</div>
-
-      <!-- Frame 3 -->
-      <div class="header-btn">Этапы работы</div>
-
-      <div class="header-item">Партнеры</div>
-      <div class="header-item">Контакты</div>
-    </nav>
-  </div>
-
-
-  <!-- Хедер. Мобильное меню -->
-  <div class="header-mobile">
-    <div class="icon telegram"></div>
-    <div class="icon whatsapp"></div>
-    <div class="icon burger"></div>
-  </div>
-  </header>
-
+    <!-- Контент первого экрана -->
+    <div class="hero-content">
 
     <!-- Логотипный блок -->
   <div class="logo-frame">
@@ -72,7 +77,7 @@
     </div>
   </div>
 
-    <!-- Main title -->
+    <!-- Заголовок -->
   <div class="main-title">
     за 5 дней внедряем<br>
     AI-решения,которые<br>
@@ -80,7 +85,7 @@
     бюджета и времени
   </div>
 
-  <!-- Main subtitle -->
+  <!-- Подзаголовок -->
   <div class="main-subtitle">
     С 2019 года мы внедряем современные AI-решения<br>
     для компаний, нацеленных на рост<br>
@@ -92,6 +97,8 @@
     <img src="img/main/Vector_phone.png" alt="phone" class="cta-icon">
     <div class="cta-text">Бесплатная консультация по внедрению ИИ</div>
   </div>
+</section>
+
 
   <!-- О компании -->
   <div class="about">
@@ -437,8 +444,6 @@
         <img src="img/contacts/BBK IT.png" alt="BBK IT">
     </div>
 
-
-</section>
 
 
 </body>
